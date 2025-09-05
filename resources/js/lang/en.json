@@ -6,6 +6,26 @@
     "vn": "VN",
     "en": "EN"
   },
+  "carousel": {
+    "slides": [
+      {
+        "title": "Faculty of Information Technology",
+        "description": "Experience the vibrant energy of university life."
+      },
+      {
+        "title": "Information Technology",
+        "description": "Application development, network administration, IT project management."
+      },
+      {
+        "title": "Software Engineering",
+        "description": "Software project management, IT project planning and development."
+      },
+      {
+        "title": "Communication and Computer Networks",
+        "description": "Network solutions, network security, web and mobile application development."
+      }
+    ]
+  },
   "navigation": {
     "gioi_thieu": {
       "title": "About",
@@ -21,8 +41,7 @@
       "children": {
         "undergraduate": "Undergraduate Programs",
         "postgraduate": "Postgraduate Programs",
-        "results": "Academic Results",
-        "timetable": "Timetable"
+        "department": "Department"
       }
     },
     "tin_tuc": {

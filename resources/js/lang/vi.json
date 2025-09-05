@@ -6,6 +6,26 @@
     "vn": "VN",
     "en": "EN"
   },
+  "carousel": {
+    "slides": [
+      {
+        "title": "Khoa công nghệ thông tin",
+        "description": "Trải nghiệm năng lượng sôi động của cuộc sống đại học."
+      },
+      {
+        "title": "Công nghệ thông tin",
+        "description": "Xây dựng ứng dụng, quản trị mạng, quản trị dự án CNTT."
+      },
+      {
+        "title": "Công nghệ phần mềm",
+        "description": "Quản trị dự án phần mềm, lập kế hoạch và phát triển dự án CNTT."
+      },
+      {
+        "title": "Truyền thông và mạng máy tính",
+        "description": "Giải pháp mạng, an ninh mạng, xây dựng ứng dụng web và mobile."
+      }
+    ]
+  },
   "navigation": {
     "gioi_thieu": {
       "title": "Giới thiệu",
@@ -21,8 +41,7 @@
       "children": {
         "undergraduate": "Đào tạo Đại học",
         "postgraduate": "Đào tạo sau Đại học",
-        "results": "Kết quả học tập",
-        "timetable": "Thời khóa biểu"
+        "department": "Bộ môn"
       }
     },
     "tin_tuc": {

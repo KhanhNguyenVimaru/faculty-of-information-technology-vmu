@@ -175,8 +175,7 @@ export default {
           children: {
             undergraduate: this.$t('navigation.dao_tao.children.undergraduate'),
             postgraduate: this.$t('navigation.dao_tao.children.postgraduate'),
-            results: this.$t('navigation.dao_tao.children.results'),
-            timetable: this.$t('navigation.dao_tao.children.timetable')
+            results: this.$t('navigation.dao_tao.children.department'),
           }
         },
         {
