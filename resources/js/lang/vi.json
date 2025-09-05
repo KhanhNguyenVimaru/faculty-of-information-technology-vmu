@@ -1,0 +1,66 @@
+{
+  "search_placeholder": "Tìm kiếm...",
+  "university_name": "TRƯỜNG ĐẠI HỌC HÀNG HẢI VIỆT NAM",
+  "faculty_name": "KHOA CÔNG NGHỆ THÔNG TIN",
+  "language": {
+    "vn": "VN",
+    "en": "EN"
+  },
+  "navigation": {
+    "gioi_thieu": {
+      "title": "Giới thiệu",
+      "children": {
+        "history": "Lịch sử hình thành",
+        "structure": "Cơ cấu tổ chức",
+        "staff": "Đội ngũ cán bộ",
+        "address": "Địa chỉ"
+      }
+    },
+    "dao_tao": {
+      "title": "Đào tạo",
+      "children": {
+        "undergraduate": "Đào tạo Đại học",
+        "postgraduate": "Đào tạo sau Đại học",
+        "results": "Kết quả học tập",
+        "timetable": "Thời khóa biểu"
+      }
+    },
+    "tin_tuc": {
+      "title": "Tin tức - Sự kiện",
+      "children": {
+        "announcements": "Thông báo",
+        "news": "Tin khoa"
+      }
+    },
+    "sinh_vien": {
+      "title": "Sinh viên",
+      "children": {
+        "scholarships": "Học bổng",
+        "youth_union": "Đoàn thanh niên"
+      }
+    },
+    "tuyen_sinh": {
+      "title": "Tuyển sinh",
+      "children": {
+        "info": "Thông tin tuyển sinh",
+        "majors": "Các ngành",
+        "scores": "Điểm chuẩn tham khảo"
+      }
+    },
+    "tuyen_dung": {
+      "title": "Tuyển dụng",
+      "children": {
+        "lecturer": "Tuyển dụng giảng viên",
+        "staff": "Tuyển dụng nhân sự"
+      }
+    },
+    "tai_lieu": {
+      "title": "Tài liệu",
+      "children": {
+        "materials": "Tài liệu học tập",
+        "excellent": "Các bài xuất sắc",
+        "research": "Nghiên cứu khoa học"
+      }
+    }
+  }
+}

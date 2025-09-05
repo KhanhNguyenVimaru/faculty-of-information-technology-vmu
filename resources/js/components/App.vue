@@ -1,5 +1,11 @@
 <template>
-    <div>
-        <h1>Welcome to Laravel 12 with Vue 3</h1>
-    </div>
+    <HeadNavigation />
 </template>
+<script>
+import HeadNavigation from './HeadNavigation.vue';
+export default {
+    components: {
+        HeadNavigation
+    },
+};
+</script>

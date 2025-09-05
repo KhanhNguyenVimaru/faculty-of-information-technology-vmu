@@ -1,0 +1,66 @@
+{
+  "search_placeholder": "Search...",
+  "university_name": "VIETNAM MARITIME UNIVERSITY",
+  "faculty_name": "FACULTY OF INFORMATION TECHNOLOGY",
+  "language": {
+    "vn": "VN",
+    "en": "EN"
+  },
+  "navigation": {
+    "gioi_thieu": {
+      "title": "About",
+      "children": {
+        "history": "History",
+        "structure": "Organizational Structure",
+        "staff": "Staff Team",
+        "address": "Address"
+      }
+    },
+    "dao_tao": {
+      "title": "Education",
+      "children": {
+        "undergraduate": "Undergraduate Programs",
+        "postgraduate": "Postgraduate Programs",
+        "results": "Academic Results",
+        "timetable": "Timetable"
+      }
+    },
+    "tin_tuc": {
+      "title": "News & Events",
+      "children": {
+        "announcements": "Announcements",
+        "news": "Faculty News"
+      }
+    },
+    "sinh_vien": {
+      "title": "Students",
+      "children": {
+        "scholarships": "Scholarships",
+        "youth_union": "Youth Union"
+      }
+    },
+    "tuyen_sinh": {
+      "title": "Admissions",
+      "children": {
+        "info": "Admission Information",
+        "majors": "Majors",
+        "scores": "Reference Scores"
+      }
+    },
+    "tuyen_dung": {
+      "title": "Recruitment",
+      "children": {
+        "lecturer": "Lecturer Recruitment",
+        "staff": "Staff Recruitment"
+      }
+    },
+    "tai_lieu": {
+      "title": "Resources",
+      "children": {
+        "materials": "Study Materials",
+        "excellent": "Excellent Works",
+        "research": "Scientific Research"
+      }
+    }
+  }
+}
