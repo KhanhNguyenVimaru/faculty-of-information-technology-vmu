@@ -149,7 +149,7 @@ const handleLogin = async () => {
 
     if (success) {
       // Chuyển hướng đến trang dashboard
-      window.location.href = '/manage-dashboard'
+      window.location.href = '/dashboard'
     } else {
       alert('Đăng nhập thất bại. Vui lòng thử lại.')
     }

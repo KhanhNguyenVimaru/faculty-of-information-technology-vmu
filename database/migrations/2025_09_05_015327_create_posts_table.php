@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->boolean('is_pending')->default(0);
             $table->timestamps();
-            $table->unsignedBigInteger('author_id');
+            $table->string('author_id');
             $table->text('content');
             $table->string('additionFile', 255)->nullable();
 

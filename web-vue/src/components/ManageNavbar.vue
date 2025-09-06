@@ -13,7 +13,7 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
-            <router-link to="/manage-dashboard"><img class="h-9 w-auto" src="../../public/vmu_logo.svg" alt="VMU Logo" /></router-link>
+            <router-link to="/dashboard"><img class="h-9 w-auto" src="../../public/vmu_logo.svg" alt="VMU Logo" /></router-link>
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
@@ -71,7 +71,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const navigation = [
-  { name: 'Dashboard', href: '/manage-dashboard', current: false },
+  { name: 'Dashboard', href: '/dashboard', current: false },
   { name: 'Bài viết', href: '/posts', current: false },
   { name: 'Sinh viên', href: '/students', current: false },
   { name: 'Giảng viên', href: '/professors', current: false },

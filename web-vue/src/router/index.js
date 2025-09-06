@@ -16,7 +16,7 @@ const SettingsPage = () => import('../pages/manage/SettingsPage.vue');
 const routes = [
     { path: '/', component: HomeView},
     { path: '/login', component: LoginPage},
-    { path: '/manage-dashboard', component: DashBoardPage},
+    { path: '/dashboard', component: DashBoardPage},
     { path: '/posts', component: PostsPage },
     { path: '/students', component: StudentsPage },
     { path: '/professors', component: ProfessorsPage },
