@@ -4,7 +4,7 @@ import en from './lang/en.json'
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'vi',   // ngôn ngữ mặc định
+  locale: 'vi',
   fallbackLocale: 'en',
   messages: {
     vi,
@@ -13,3 +13,5 @@ const i18n = createI18n({
 })
 
 export default i18n
+
+

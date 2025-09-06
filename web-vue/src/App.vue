@@ -1,6 +1,8 @@
 <template>
     <router-view />
 </template>
-<script>
-export default {}
+
+<script setup>
 </script>
+
+<style scoped></style>

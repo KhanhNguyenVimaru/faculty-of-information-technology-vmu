@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="flex justify-center mb-4">
           <div class="w-22 h-22 items-center justify-center">
-              <img :src="vmuLogo" alt="VMU Logo" class="w-22 h-22   " />
+              <img src="../../public/vmu_logo.svg" alt="" class="w-22 h-22">
           </div>
         </div>
 
@@ -123,8 +123,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import vmuLogo from '@/assets/vmu_logo.svg'
+import { useAuthStore } from '../stores/auth'
 
+const authStore = useAuthStore()
 const accountCode = ref('')
 const password = ref('')
 const isLoading = ref(false)
@@ -144,17 +145,14 @@ const handleLogin = async () => {
   isLoading.value = true
 
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    const success = await authStore.login(accountCode.value, password.value)
 
-    // Handle successful login
-    console.log('Đăng nhập thành công:', {
-      accountCode: accountCode.value,
-      password: password.value,
-      rememberMe: rememberMe.value
-    })
-
-    alert('Đăng nhập thành công!')
+    if (success) {
+      // Chuyển hướng đến trang dashboard
+      window.location.href = '/manage-dashboard'
+    } else {
+      alert('Đăng nhập thất bại. Vui lòng thử lại.')
+    }
   } catch (error) {
     console.error('Lỗi đăng nhập:', error)
     alert('Đăng nhập thất bại. Vui lòng thử lại.')
