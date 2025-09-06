@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HeadNavigation from '../components/HeadNavigation.vue';
-    
+import HomeView from '../pages/HomeView.vue';
+import LoginPage from '../pages/LoginPage.vue';
+import DashBoardPage from '../pages/DashBoardPage.vue';
+
 const routes = [
-    { path: '/', component: HeadNavigation }
+    { path: '/', component: HomeView},
+    { path: '/login', component: LoginPage},
+    { path: '/manage-dashboard', component: DashBoardPage}
 ];
 
 const router = createRouter({
