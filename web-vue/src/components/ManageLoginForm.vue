@@ -113,7 +113,7 @@
         <!-- Additional Options -->
         <div class="text-center mt-6 pt-4 border-t border-gray-200">
           <p class="text-xs text-gray-500">
-            © 2024 Trường Đại học Hàng hải Việt Nam
+            © 2025 Trường Đại học Hàng hải Việt Nam
           </p>
         </div>
       </form>

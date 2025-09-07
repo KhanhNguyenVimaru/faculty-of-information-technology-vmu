@@ -14,13 +14,18 @@ class professor extends Model
     /** @use HasFactory<\Database\Factories\ProfessorFactory> */
     use HasFactory;
 
-    public function User(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'professor_id', 'id');
     }
 
-    public function deparment(): HasOne
+    public function department(): BelongsTo
     {
-        return $this->hasOne(department::class, 'user_id');
+        return $this->belongsTo(department::class, 'department_id');
+    }
+    
+    public function headOfDepartment()
+    {
+        return $this->hasOne(department::class, 'head_of_department_id', 'professor_id');
     }
 }

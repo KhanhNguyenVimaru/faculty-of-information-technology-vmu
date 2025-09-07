@@ -69,24 +69,6 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 12l-6.518 3.764V8.236L14.752 12z" />
       </svg>
     </button>
-
-    <!-- Language Toggle -->
-    <div class="absolute top-4 left-4 flex space-x-2">
-      <button
-        @click="switchLanguage('vi')"
-        class="px-2 py-1 text-sm font-medium rounded transition-all duration-200"
-        :class="locale === 'vi' ? 'bg-white text-black' : 'bg-black bg-opacity-50 text-white hover:bg-opacity-70'"
-      >
-        {{ t('language.vn') }}
-      </button>
-      <button
-        @click="switchLanguage('en')"
-        class="px-2 py-1 text-sm font-medium rounded transition-all duration-200"
-        :class="locale === 'en' ? 'bg-white text-black' : 'bg-black bg-opacity-50 text-white hover:bg-opacity-70'"
-      >
-        {{ t('language.en') }}
-      </button>
-    </div>
   </div>
 </template>
 

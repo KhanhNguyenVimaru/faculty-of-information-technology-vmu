@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title', 255);
             $table->unsignedBigInteger('category_id');
             $table->boolean('is_pending')->default(0);

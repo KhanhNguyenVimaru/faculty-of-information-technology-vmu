@@ -15,14 +15,14 @@ class post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    public function catogories() :BelongsTo
+    public function category() :BelongsTo
     {
         return $this->belongsTo(category::class, 'category_id');
     }
 
     public function long_post() : HasOne
     {
-        return $this->hasOne(long_post::class, 'id');
+        return $this->hasOne(long_post::class, 'post_id');
     }
 
     public function user() :BelongsTo

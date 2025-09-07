@@ -14,6 +14,6 @@ class long_post extends Model
 
     public function post() :BelongsTo
     {
-        return $this->belongsTo(post::class, 'id');
+        return $this->belongsTo(post::class, 'post_id');
     }
 }

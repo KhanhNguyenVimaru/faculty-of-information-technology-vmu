@@ -52,11 +52,16 @@ class User extends Authenticatable
 
     public function posts() : HasMany
     {
-        return $this->hasMany(post::class,'id');
+        return $this->hasMany(post::class, 'author_id');
     }
 
     public function professor() : HasOne
     {
-        return $this->hasOne(professor::class, 'id');
+        return $this->hasOne(professor::class, 'professor_id', 'id');
+    }
+    
+    public function student() : HasOne
+    {
+        return $this->hasOne(student::class, 'student_id', 'id');
     }
 }

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('name', 255);
             $table->string('head_of_department_id')->nullable();
             $table->foreign('head_of_department_id')->references('professor_id')->on('professors')->onDelete('set null');
