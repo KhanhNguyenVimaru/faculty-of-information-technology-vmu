@@ -12,12 +12,13 @@ class department extends Model
 {
     /** @use HasFactory<\Database\Factories\DepartmentFactory> */
     use HasFactory;
+    public $timestamps = false;
 
     public function headProfessor() :BelongsTo
     {
         return $this->belongsTo(professor::class, 'head_of_department_id', 'professor_id');
     }
-    
+
     public function professors() :HasMany
     {
         return $this->hasMany(professor::class, 'department_id');

@@ -41,4 +41,27 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+    
+    /**
+     * Create a professor user with specific ID format.
+     */
+    public function professor(): static
+    {
+        static $counter = 1;
+        
+        return $this->state(function (array $attributes) use (&$counter) {
+            $id = 'gv' . $counter;
+            $name = fake()->firstName();
+            $email = strtolower($name) . $id . '@st.vimaru.edu.vn';
+            
+            $counter++;
+            
+            return [
+                'id' => $id,
+                'role' => 'professor',
+                'name' => $name . ' ' . fake()->lastName(),
+                'email' => $email,
+            ];
+        });
+    }
 }

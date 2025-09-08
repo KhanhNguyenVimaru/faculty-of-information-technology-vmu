@@ -16,15 +16,21 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
     protected $fillable = [
+        'id',
+        'role',
         'name',
         'email',
         'password',
+        'remember_token',
     ];
 
     /**
@@ -59,7 +65,7 @@ class User extends Authenticatable
     {
         return $this->hasOne(professor::class, 'professor_id', 'id');
     }
-    
+
     public function student() : HasOne
     {
         return $this->hasOne(student::class, 'student_id', 'id');

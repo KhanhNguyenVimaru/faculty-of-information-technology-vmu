@@ -13,7 +13,7 @@
           <!-- Action Controls -->
           <div class="flex items-center gap-2">
             <!-- Filter Input -->
-            <div class="relative">
+            <div v-if="isMain" class="relative">
               <input
                 v-model="filterKeyword"
                 type="text"
@@ -52,7 +52,6 @@
           </div>
         </div>
       </div>
-
       <!-- Table Section -->
       <div class="overflow-x-auto">
         <table class="w-full">
@@ -63,7 +62,7 @@
                 :key="col"
                 :class="[
                   'text-left font-medium text-gray-600 normal-case tracking-wide',
-                  isMain ? 'px-6 py-2.5 text-xs' : 'px-4 py-2 text-xs'
+                  isMain ? 'px-5 py-2.5 text-sm' : 'px-4 py-2 text-xs'
                 ]"
               >
                 {{ col }}
@@ -101,6 +100,36 @@
           </p>
         </div>
       </div>
+
+      <!-- Pagination Controls (bottom) -->
+      <div v-if="pagination" class="px-4 py-3 border-t border-gray-100 bg-white flex items-center justify-between">
+        <div class="text-xs text-gray-500">
+          Trang {{ pagination.page }} / {{ pagination.lastPage }} · Tổng {{ pagination.total }}
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-xs text-gray-500 mr-1">/ trang</label>
+          <select
+            class="border border-gray-300 rounded-md text-xs py-1 px-2 bg-white"
+            :value="pagination.perPage"
+            @change="(e) => emit('change:perPage', Number(e.target.value))"
+          >
+            <option :value="5">5</option>
+            <option :value="10">10</option>
+            <option :value="20">20</option>
+            <option :value="50">50</option>
+          </select>
+          <button
+            class="px-2 py-1 text-xs border rounded-md disabled:opacity-50"
+            :disabled="pagination.page <= 1"
+            @click="emit('change:page', pagination.page - 1)"
+          >Trước</button>
+          <button
+            class="px-2 py-1 text-xs border rounded-md disabled:opacity-50"
+            :disabled="pagination.page >= pagination.lastPage"
+            @click="emit('change:page', pagination.page + 1)"
+          >Sau</button>
+        </div>
+      </div>
     </div>
   </template>
 
@@ -111,10 +140,11 @@
     title: String,
     data: Array,
     columns: Array,
-    isMain: Boolean
+    isMain: Boolean,
+    pagination: Object
   })
 
-  const emit = defineEmits(['update:data'])
+  const emit = defineEmits(['update:data', 'change:page', 'change:perPage'])
 
   // Filter functionality
   const filterKeyword = ref('')
@@ -132,3 +162,4 @@
     filterKeyword.value = ''
   }
   </script>
+

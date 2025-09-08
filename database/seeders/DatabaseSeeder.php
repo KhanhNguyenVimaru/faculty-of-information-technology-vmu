@@ -16,8 +16,16 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
+            'id' => 'admin1',
+            'role' => 'admin',
             'name' => 'Test User',
             'email' => 'test@example.com',
+        ]);
+
+        // Chạy seeders theo thứ tự: Professors trước, sau đó Departments để gán trưởng khoa
+        $this->call([
+            ProfessorSeeder::class,
+            DepartmentSeeder::class,
         ]);
     }
 }
