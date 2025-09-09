@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\professor;
 use App\Http\Requests\StoreprofessorRequest;
 use App\Http\Requests\UpdateprofessorRequest;
-use App\Http\Requests\SearchProfessorRequest;
+use App\Http\Requests\SearchRequest;
 use Illuminate\Http\JsonResponse;
-use App\Http\Resources\ProfessorCollection;
 use Throwable;
 
 class ProfessorController extends Controller
@@ -15,17 +14,17 @@ class ProfessorController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(SearchProfessorRequest $request): JsonResponse
+    public function index(SearchRequest $request): JsonResponse
     {
         try {
             $query = professor::query()->with('user', 'department');
             if ($request->filled('search')) {
                 $query->whereSearch($request->string('search')->value());
             }
+
             $query->orderBy('professor_id', 'asc');
             $professors = $query->paginate($request->integer('perpage', 10));
 
-            //return (new ProfessorCollection($professors))->response()->setStatusCode(200);
             return response()->json([
                 'status' => 'success',
                 'message' => 'Professors retrieved successfully',

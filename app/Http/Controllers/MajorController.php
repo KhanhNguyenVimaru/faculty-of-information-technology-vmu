@@ -5,15 +5,38 @@ namespace App\Http\Controllers;
 use App\Models\major;
 use App\Http\Requests\StoremajorRequest;
 use App\Http\Requests\UpdatemajorRequest;
+use Throwable;
+use App\Http\Requests\SearchRequest;
+use Illuminate\Http\JsonResponse;
 
 class MajorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SearchRequest $request) : JsonResponse
     {
-        //
+        try {
+            $query = major::query();
+            if ($request->filled('search')) {
+                $query->scopeSearch($request->string('search')->value());
+            }
+
+            $majors = $query->paginate($request->integer('perpage', 10));
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Majors retrieved successfully',
+                'data' => $majors,
+            ], 200);
+
+        } catch (Throwable $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Failed to retrieve majors',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
 
     /**

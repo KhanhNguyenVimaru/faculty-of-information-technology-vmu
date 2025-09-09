@@ -12,14 +12,32 @@ class major extends Model
 {
     /** @use HasFactory<\Database\Factories\MajorFactory> */
     use HasFactory;
+    
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'id' => 'string',
+    ];
 
     public function cutoff_scores() :HasMany
     {
         return $this->hasMany(cutoff_score::class, 'major_id');
     }
-    
+
     public function students() :HasMany
     {
         return $this->hasMany(student::class, 'major', 'id');
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        $term = "%$search%";
+        $query->where(function ($query) use ($term) {
+            $query->where('name', 'like', $term)
+                  ->orWhere('id', 'like', $term);
+        });
     }
 }
